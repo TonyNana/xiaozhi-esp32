@@ -32,7 +32,7 @@ protected:
     lv_obj_t* chat_message_label_ = nullptr;
     esp_timer_handle_t preview_timer_ = nullptr;
     std::unique_ptr<LvglImage> preview_image_cached_ = nullptr;
-
+    lv_obj_t* power_label_ = nullptr;
     void InitializeLcdThemes();
     void SetupUI();
     virtual bool Lock(int timeout_ms = 0) override;

@@ -849,6 +849,13 @@ void LcdDisplay::SetupUI() {
     lv_obj_set_style_text_font(battery_label_, icon_font, 0);
     lv_obj_set_style_text_color(battery_label_, lvgl_theme->text_color(), 0);
 
+
+    power_label_ = lv_label_create(status_bar_);
+    lv_obj_set_style_text_align(power_label_, LV_TEXT_ALIGN_RIGHT, 0);
+    lv_label_set_long_mode(power_label_, LV_LABEL_LONG_SCROLL_CIRCULAR);
+    lv_obj_set_style_text_color(power_label_, lvgl_theme->text_color(), 0);
+    lv_label_set_text(power_label_, "ON");
+
     low_battery_popup_ = lv_obj_create(screen);
     lv_obj_set_scrollbar_mode(low_battery_popup_, LV_SCROLLBAR_MODE_OFF);
     lv_obj_set_size(low_battery_popup_, LV_HOR_RES * 0.9, text_font->line_height * 2);
